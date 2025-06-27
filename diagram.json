@@ -1,0 +1,51 @@
+
+{
+  "version": 1,
+  "author": "Victor Manuel Meneses Arevalo - U202212191",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-devkit-v1",
+      "id": "esp1",
+      "top": -3.2,
+      "left": -16.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-gas-sensor",
+      "id": "gas1",
+      "top": -91.8,
+      "left": 128.8,
+      "attrs": {
+        "gasPPM": "500"
+      }
+    },
+    {
+      "type": "wokwi-led",
+      "id": "led1",
+      "top": 20.4,
+      "left": 135.2,
+      "attrs": {
+        "color": "red"
+      }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 55.2,
+      "left": 172.8,
+      "attrs": {
+        "value": "220"
+      }
+    }
+  ],
+  "connections": [
+    [ "gas1:AO", "esp1:VP", "green", [ "v0" ] ],
+    [ "gas1:VCC", "esp1:3V3", "red", [ "v0" ] ],
+    [ "gas1:GND", "esp1:GND.1", "black", [ "v0" ] ],
+    [ "led1:A", "r1:1", "red", [ "v0" ] ],
+    [ "r1:2", "esp1:D15", "green", [ "v0" ] ],
+    [ "led1:C", "esp1:GND.2", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
